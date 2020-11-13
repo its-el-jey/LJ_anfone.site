@@ -180,6 +180,7 @@ img {
   }
   .nav__link {
     text-transform: initial;
+    font-size: 0.938rem;
   }
 }
 
