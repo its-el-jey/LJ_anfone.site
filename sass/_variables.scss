@@ -1,0 +1,43 @@
+// variables
+$header-height: 3rem;
+$font-medium: 500;
+$font-bold: 700;
+$font-black: 900;
+
+// colors
+$first-color: #FFBD12;
+$white-color: #FAFAFF;
+$dark-color: #18191F;
+$text-color: #697477;
+$red-color: #F95A2C;
+$blue-color: #1947E5;
+$light-yellow: #FFD465;
+
+// font
+$body-font: 'Montserrat', sans-serif;
+
+$h2-font-size: 1.50rem;
+$big-font-size: 6.25rem;
+$normal-font-size: .938rem;
+$small-font-size: .813rem;
+
+    @media screen and (min-width: 768px){
+        $h2-font-size: 2.50rem;
+        $big-font-size: 10.5rem;
+        $normal-font-size: 1rem;
+        $small-font-size: .875rem;
+    }
+
+// margins
+$mb-1: 0.5rem;
+$mb-2: 1rem;
+$mb-3: 1.5rem;
+$mb-4: 2rem;
+
+// z-index
+$z-fixed: 100;
+$z-back: -10;
+$z-normal: 1;
+$z-tooltip: 10;
+$z-fixed: 100;
+$z-modal: 1000;

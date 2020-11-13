@@ -1,48 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
-
-// variables
-:root{
-    --header-height: 3rem;
-    --font-medium: 500;
-}
-
-// colors
-:root{
-    --first-color: #5361FF;
-    --white-color: #FAFAFF;
-    --dark-color: #2a3b47;
-    --text-color: #697477;
-}
-
-// font
-:root{
-    --body-font: 'Montserrat', sans-serif;
-
-    --big-font-size: 6.25rem;
-    --h2-font-size: 1.25rem;
-    --normal-font-size: .938rem;
-    --small-font-size: .813rem;
-
-    @media screen and (min-width: 768px){
-        --big-font-size: 10.5rem;
-        --h2-font-size: 2rem;
-        --normal-font-size: 1rem;
-        --small-font-size: .875rem;
-    }
-}
-
-// margins
-:root{
-    --mb-1: 0.5rem;
-    --mb-2: 1rem;
-    --mb-3: 1.5rem;
-    --mb-4: 2rem;
-}
-
-// z-index
-:root{
-    --z-fixed: 100;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;900&display=swap');
+@import 'variables';
 
 // base
 *,::before,::after{
@@ -50,4 +7,170 @@
 }
 html{
     scroll-behavior: smooth;
+}
+body{
+    margin: $header-height 0 0 0;
+    font-family: $body-font;
+    font-size: $normal-font-size;
+    font-weight: $font-bold;
+    color: $text-color;
+    line-height: 1.6;
+}
+h1,h2{
+    margin: 0;  
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: $white-color;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.section{
+    padding: 3rem 0;
+    &-title{
+        position: relative;
+        font-size: $h2-font-size;
+        color: $dark-color;
+        margin: $mb-4 0;
+        text-align: center;
+    
+        &::after{
+            position: absolute;
+            content: '';
+            width: 32px;
+            height: .18rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 2rem;
+            background-color: $first-color;
+        }
+    }
+}
+
+
+.bd-grid{
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: $mb-2;
+    margin-right: $mb-2;
+}
+.l-header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-modal;
+    background-color: $first-color;
+}
+
+
+.nav {
+    height: $header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    &__menu {
+        @media screen and (max-width: 768px){
+            position: fixed;
+            top: $header-height;
+            right: -100%;
+            background: rgba(255, 255, 255, 0.3);
+            width: 85%;
+            height: 100vh;
+            padding: 1rem;
+            z-index: $z-modal;
+            font-weight: $font-black;
+            transition: .5s;
+            backdrop-filter: blur(10px);
+        }
+    }
+    &__list {
+        text-align: center;
+        padding-top: 2.5rem;
+    }
+    &__item {
+        margin-bottom: 2.5rem;
+    }
+    &__link {
+        padding: .5rem;
+        color: $dark-color;
+        text-transform: uppercase;
+        font-size: $h2-font-size;
+
+        &:hover{
+            color: $red-color;
+        }
+    }
+    &__logo {
+        font-size: $h2-font-size;
+        font-weight: $font-black;
+        color: $white-color;
+    }
+    &__toggle {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: $white-color;
+    }
+}
+
+    .show {
+        right: 0;
+    }
+
+    .hidden{
+        right: -100%;
+    }
+
+
+.l-main {
+    height: calc(100vh - $header-height);
+}
+
+
+// media queries
+@media screen and (min-width: 768px){
+    body{
+        margin: 0;
+    }
+    .l-main{
+        height: 100vh;
+    }
+    .nav{
+        &__list{
+            display: flex;
+            padding-top: 0;
+        }
+        &__item{
+            margin-left: 3rem;
+            margin-bottom: 0;
+        }
+        &__toggle{
+            display: none;
+        }
+        &__link{
+            text-transform: initial;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .bd-grid{
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
