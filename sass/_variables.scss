@@ -11,13 +11,17 @@ $dark-color: #18191F;
 $text-color: #697477;
 $red-color: #F95A2C;
 $blue-color: #1947E5;
-$light-yellow: #FFD465;
+$light-blue-color: #55acee;
+$light-yellow-color: #FFD465;
+$overlay-color: hsla(0, 0, 0, 0.1);
+
 
 // font
 $body-font: 'Montserrat', sans-serif;
 
 $h2-font-size: 1.50rem;
-$big-font-size: 6.25rem;
+$big-font-size1: 3rem;
+$big-font-size: 6rem;
 $normal-font-size: .938rem;
 $small-font-size: .813rem;
 
@@ -41,3 +45,4 @@ $z-normal: 1;
 $z-tooltip: 10;
 $z-fixed: 100;
 $z-modal: 1000;
+                
