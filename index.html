@@ -9,10 +9,10 @@
 </head>
 <body>
     <!-- navigation bar -->
-    <header class="header">
+    <header class="header nav-scrolled" id="nav">
         <nav class="nav bd-grid">
             <div>
-                <a href="#home" class="nav__logo">LJ</a>
+                <a href="#home" class="nav__logo">L<span>J</span></a>
             </div>
 
             <div class="nav__menu" id="nav-menu">
@@ -32,8 +32,8 @@
     <!-- !navigation bar -->
 
     <!-- home -->
-    <section class="main bd-grid">
-        <section class="home" id="home">
+    <section class="main bd-grid" id="home">
+        <section class="home">
             <h1 class="home__title">LOIDA <br> JANE<br> ANFONE</h1>
 
                 <div class="home__img">
@@ -49,8 +49,8 @@
                 <h2 class="home__subtitle" id="subtitle"><br>WEB<br>DEVELOPER</h2>
 
                 <a href="#" class="home__button">See More <i class="fas fa-arrow-down home__button-icon"></i> </a>
-            </section>
         </section>
+    </section>
     <!-- !home section -->
 
     <main class="main">
@@ -172,24 +172,25 @@
                 
                 <form action="" class="contact__form">
                     <div class="contact__inputs">
-                        <input type="text" class="contact__input" id="name">
-                        <label for="name">name / company</label>
+                        <input type="text" class="contact__input" id="name" name="name">
+                        <label for="name" class="label">name / company</label>
                     </div>
                     <div class="contact__inputs">
-                        <input type="email" class="contact__input" id="email">
-                        <label for="email">email</label>
+                        <input type="email" class="contact__input" id="email" name="email">
+                        <label for="email" class="label">email</label>
                     </div>
                     <div class="contact__inputs">
                         <textarea name="message" id="message" class="contact__input" rows="10"></textarea>
-                        <label for="message">write a message</label>
+                        <label for="message" class="label">write a message</label>
                     </div>
                     <div class="button">
                         <a href="#" class="btn blue">Send</a>
                     </div>
                 </form>
-                <div class="contact__img">
+                <div id="status">Success</div>
+                <!-- <div class="contact__img">
                     <img src="/img/contact.png" alt="contact">
-                </div>
+                </div> -->
             </div>
         </section>
         <!-- !contact -->
@@ -214,9 +215,46 @@
     </main>
 
 
-    <!-- scroll reveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+
     <!-- main js     -->
     <script src="/js/main.js"></script>
+    <!-- animation library -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        const sr = ScrollReveal({
+        origin: 'top',
+        distance: '80px',
+        duration: 2000,
+        reset: true
+        })
+        sr.reveal('.')
+        sr.reveal('.skills__subtitle', {})
+        sr.reveal('.skills__name', {distance: '20px', delay: 50, interval: 100})
+        sr.reveal('.skills__img', {delay: 400})
+        
+        sr.reveal('.about__img', {delay: 500})
+        sr.reveal('.about__subtitle', {delay: 300})
+        sr.reveal('.about__profession', {delay: 400})
+        sr.reveal('.about__txt', {delay: 500})
+
+        sr.reveal('.button', {delay: 600, interval: 200})
+
+        sr.reveal('.portfolio__img', {interval: 200})
+
+        sr.reveal('.contact__input', {delay: 400})
+        ScrollReveal().reveal('.label', { easing: 'ease-in' });
+        sr.reveal('.contact__img', {delay: 400})
+    </script>
+
+    <!-- gsap animation library -->
+    <!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+        
+    <script>
+        gsap.from('.nav', {opacity: 0, duration: 1, delay:1, y: -30})
+        gsap.from('.home__title', {opacity: 0, duration: 1.2, delay:1.2, y: -30, once: false})
+        gsap.from('.home__social', {opacity: 0, duration: 1, delay:1.5, y: 50})
+        gsap.from('.home__subtitle', {opacity: 0, duration: 1, delay: 1.8, y: 50})
+        gsap.from('.home__button', {opacity: 0, duration: 1, delay:2, y: 50})
+    </script> -->
 </body>
 </html>

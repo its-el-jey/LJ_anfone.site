@@ -98,7 +98,7 @@ img{
     top: 0;
     left: 0;
     z-index: $z-modal;
-    background-color: $dark-color;
+    background-color: $white-color;
 }
 .main {
     height: calc(100vh - #{$header-height});
@@ -123,6 +123,7 @@ img{
             font-weight: $font-black;
             transition: .5s;           
             backdrop-filter: blur(10px);
+            background-color: $overlay-color;
         }
     }
     &__list {
@@ -134,7 +135,7 @@ img{
     }
     &__link {
         padding: .5rem;
-        color: $white-color;
+        color: $dark-color;
         text-transform: uppercase;
         font-size: $h2-font-size;
 
@@ -145,7 +146,10 @@ img{
     &__logo {
         font-size: $h2-font-size;
         font-weight: $font-black;
-        color: $white-color;
+        color: $dark-color;
+        span {
+            color: $first-color;
+        }
     }
     &__toggle {
         font-size: 1.5rem;
@@ -154,76 +158,81 @@ img{
     }
 }
 
+    // show menu
     .show {
         right: 0;
     }
 
+    // hide menu
     .hidden{
         right: -100%;
     }
 
-// home
-    .home{
-        position: relative;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 4fr;
-        align-content: flex-end;
-        z-index: $z-normal;
-
-        &__title{
-            position: absolute;
-            top: 4%;
-            left: 5%;
-            font-size: $big-font-size1;
-            font-weight: $font-black;
-            color: $dark-color;
-            z-index: $z-fixed;
-        }
-        &__img{
-            position: absolute;
-            top: 10%;
-            left: 22%;
-            width: 235px;
-            height: 235px;
-            z-index: $z-tooltip;
-        }
-        &__social{
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            padding-top: 2rem;
+    // active
     
-            &-link{
-                padding-bottom: 2rem;
-                color: $dark-color;
-                font-size: $small-font-size;
 
-                &:hover{
-                    color: $red-color;
-                }
-            }
-        }
-        &__subtitle{
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            padding-top: 2rem;
-            padding-right: .5rem;
-            font-size: $h2-font-size;
-            font-weight: $font-black;
-        }
-        &__button{
-            position: absolute;
-            right: -1rem;
-            bottom: 0;
-            padding: 1rem;
-            background-color: $blue-color;
-            color: $white-color;
-            overflow: hidden;
-            &-icon{
-                padding-left: 1rem;
+// home
+.home{
+    position: relative;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-content: flex-end;
+    z-index: $z-normal;
+
+    &__title{
+        position: absolute;
+        top: 4%;
+        left: 5%;
+        font-size: $big-font-size1;
+        font-weight: $font-black;
+        color: $dark-color;
+        z-index: $z-fixed;
+    }
+    &__img{
+        position: absolute;
+        top: 10%;
+        left: 22%;
+        width: 235px;
+        height: 235px;
+        z-index: $z-tooltip;
+    }
+    &__social{
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        padding-top: 2rem;
+
+        &-link{
+            padding-bottom: 2rem;
+            color: $dark-color;
+            font-size: $small-font-size;
+
+            &:hover{
+                color: $red-color;
             }
         }
     }
+    &__subtitle{
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        padding-top: 2rem;
+        padding-right: .5rem;
+        font-size: $h2-font-size;
+        font-weight: $font-black;
+    }
+    &__button{
+        position: absolute;
+        right: -1rem;
+        bottom: 0;
+        padding: 1rem;
+        background-color: $blue-color;
+        color: $white-color;
+        overflow: hidden;
+        &-icon{
+            padding-left: 1rem;
+        }
+    }
+}
 
 // about
 .about {
@@ -302,6 +311,7 @@ img{
 
         &:hover .portfolio__link {
             bottom: 0;
+            
         }
     }
     &__link{
@@ -403,9 +413,6 @@ img{
             transition:all 0.3s;
             font-weight: $font-medium;
             font-size: $small-font-size;
-
-            
-            
         }
     }
     &__input{

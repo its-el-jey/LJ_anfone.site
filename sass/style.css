@@ -107,7 +107,7 @@ img {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: #18191F;
+  background-color: #FAFAFF;
 }
 
 .main {
@@ -141,6 +141,7 @@ img {
     transition: .5s;
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -155,7 +156,7 @@ img {
 
 .nav__link {
   padding: .5rem;
-  color: #FAFAFF;
+  color: #18191F;
   text-transform: uppercase;
   font-size: 1.5rem;
 }
@@ -167,7 +168,11 @@ img {
 .nav__logo {
   font-size: 1.5rem;
   font-weight: 900;
-  color: #FAFAFF;
+  color: #18191F;
+}
+
+.nav__logo span {
+  color: #FFBD12;
 }
 
 .nav__toggle {
